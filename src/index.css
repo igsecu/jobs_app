@@ -19,3 +19,13 @@ code {
 .nav .nav-item .active{
   background-color: black;
 }
+
+.nav-item a:hover{
+  color: white;
+}
+
+.nav .nav-item:hover{
+  background-color: black;
+  border-radius: 7px;
+  opacity: 1;
+}
