@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {FaMapMarker} from "react-icons/fa"
 
 const JobListing = ({job}) => {
 
@@ -18,7 +19,10 @@ const JobListing = ({job}) => {
             <p className="fs-6 mb-0">{description}</p>
             <p className="fw-bold text-end me-3" style={{cursor:"pointer"}}onClick={() => setShowFullDescription(!showFullDescription)}>{showFullDescription ? 'Less' : 'More'}</p>
             <p className="text-success">{job.salary} / Year</p>
-            <p className="text-danger fw-bold">{job.location}</p>
+            <div className="d-flex flex-row align-items-center mb-3">
+              <FaMapMarker className="text-danger me-1" /><span className="text-danger fw-bold">{job.location}</span>
+            </div>
+         
             <a href={`/job/${job.id}`} className="btn btn-sm btn-primary text-white mb-3">Read More</a>
         </div>
     </div>
