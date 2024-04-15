@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar.jsx";
+import Hero from "./components/Hero.jsx";
+import HomeCards from "./components/HomeCards.jsx";
+import JobListings from "./components/JobListings.jsx";
+import ViewAllJobs from "./components/ViewAllJobs.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+    <Navbar />
+    <Hero title="Become a React Dev" subtitle="Find the React job that fits your skills and needs" />
+    <HomeCards />
+    <JobListings />
+    <ViewAllJobs />
+   </>
   );
 }
 
