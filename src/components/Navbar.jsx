@@ -8,13 +8,13 @@ const Navbar = () => {
                 <img src={logo} alt="React Logo" style={{ height: "30px"}}/>
             </a>
             <ul className="nav nav-pills">
-                <li className="nav-item">
+                <li className="nav-item mx-1">
                     <a className="nav-link active" href="#">Home</a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item  mx-1">
                     <a className="nav-link" href="#">Jobs</a>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item  mx-1">
                     <a className="nav-link" href="#">Add Job</a>
                 </li>
             </ul>
