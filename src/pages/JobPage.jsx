@@ -1,15 +1,27 @@
 import {useState, useEffect} from "react";
-import {useParams} from "react-router-dom"
+import {useParams, useNavigate} from "react-router-dom"
 import Spinner from "../components/Spinner";
 import { FaArrowLeft, FaMapMarker} from "react-icons/fa";
 import {Link} from "react-router-dom";
 
-const JobPage = () => {
+const JobPage = ({deleteJob}) => {
 
     const {id} = useParams();
+    const navigate = useNavigate();
 
     const [job, setJob] = useState(null);
     const [loading, setLoading] = useState(true);
+
+    const onDeleteClick = async (id) => {
+        const confirm = window.confirm("Are you sure you want to delete this listing?");
+
+        if(!confirm) return;
+
+        await deleteJob(id);
+
+        navigate("/jobs");
+
+    }
 
     useEffect(() => {
         const fetchJob = async() => {
@@ -62,7 +74,7 @@ const JobPage = () => {
                         <div className="card bg-light text-start p-2 border shadow mt-3">
                             <p className="fw-bold">Company Info</p>
                             <Link to={`/jobs/edit/${job.id}`} className="btn btn-dark mb-3">Edit Job</Link>
-                            <button className="btn btn-danger mb-3">Delete Job</button>
+                            <button onClick={() => onDeleteClick(job.id)} className="btn btn-danger mb-3">Delete Job</button>
                         </div>
                     </div>
                 </div>
