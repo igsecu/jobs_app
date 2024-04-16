@@ -65,9 +65,9 @@ const AddJobPage = ({addJobSubmit}) => {
                     <label htmlFor="job-salary" className="form-label fw-bold">Salary</label>
                     <select className="form-select" value={salary}  onChange={(e) => setSalary(e.target.value)}>
                         <option value="Under $50K">Under $50K</option>
-                        <option value="$50 / $100K">Under $100K</option>
-                        <option value="$100 / $150K">Under $150K</option>
-                        <option value="$150 / $200K">Under $200K</option>
+                        <option value="$50 - $100K">Under $100K</option>
+                        <option value="$100 - $150K">Under $150K</option>
+                        <option value="$150 - $200K">Under $200K</option>
                     </select>
                 </div>
                 <div className="mt-3">
