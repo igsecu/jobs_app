@@ -1,5 +1,6 @@
 import {useState} from "react";
-import {FaMapMarker} from "react-icons/fa"
+import {FaMapMarker} from "react-icons/fa";
+import {Link} from "react-router-dom";
 
 const JobListing = ({job}) => {
 
@@ -23,7 +24,7 @@ const JobListing = ({job}) => {
               <FaMapMarker className="text-danger me-1" /><span className="text-danger fw-bold">{job.location}</span>
             </div>
          
-            <a href={`/job/${job.id}`} className="btn btn-sm btn-primary text-white mb-3">Read More</a>
+            <Link to={`/job/${job.id}`} className="btn btn-sm btn-primary text-white mb-3">Read More</Link>
         </div>
     </div>
   )
