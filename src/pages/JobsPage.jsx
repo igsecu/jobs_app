@@ -1,4 +1,5 @@
 import JobListing from "../components/JobListing";
+import Spinner from "../components/Spinner"
 
 import {useState, useEffect} from "react";
 
@@ -30,9 +31,14 @@ const JobsPage = () => {
       <h2 className="text-primary mb-4">Browse Jobs</h2>
       <div className="container">
         <div className="row g-4">
-            {jobs.map(job => (
-                <JobListing key={job.id} job={job} />
-            ))}
+            {loading ? <Spinner loading={loading} /> : (
+              <>
+                {jobs.map(job => (
+                  <JobListing key={job.id} job={job} />
+                ))}
+              </>
+            )}
+            
         </div>
       </div>
     </section>
