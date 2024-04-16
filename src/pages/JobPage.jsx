@@ -76,7 +76,7 @@ const JobPage = ({deleteJob}) => {
                             <p className="fw-bold bg-primary px-2 py-1 bg-opacity-25">{job.company.contactPhone}</p>
                         </div>
                         <div className="card bg-light text-start p-2 border shadow mt-3">
-                            <p className="fw-bold">Company Info</p>
+                            <p className="fw-bold">Manage Job</p>
                             <Link to={`/jobs/edit/${job.id}`} className="btn btn-dark mb-3">Edit Job</Link>
                             <button onClick={() => onDeleteClick(job.id)} className="btn btn-danger mb-3">Delete Job</button>
                         </div>
