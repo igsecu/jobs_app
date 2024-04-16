@@ -4,6 +4,8 @@ import Spinner from "../components/Spinner";
 import { FaArrowLeft, FaMapMarker} from "react-icons/fa";
 import {Link} from "react-router-dom";
 
+import {toast} from "react-toastify";
+
 const JobPage = ({deleteJob}) => {
 
     const {id} = useParams();
@@ -18,6 +20,8 @@ const JobPage = ({deleteJob}) => {
         if(!confirm) return;
 
         await deleteJob(id);
+
+        toast.success("Job deleted successfully!")
 
         navigate("/jobs");
 
