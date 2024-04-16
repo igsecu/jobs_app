@@ -19,6 +19,14 @@ function App() {
 
     return;
   }
+
+  const deleteJob = async(id) => {
+    const res = await fetch(`http://localhost:8000/jobs/${id}`, {
+      method: "DELETE"
+    })
+
+    return;
+  }
   
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -26,7 +34,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/jobs" element={<JobsPage />}/>
         <Route path="/add-job" element={<AddJobPage addJobSubmit={addJob} />}/>
-        <Route path="/jobs/:id" element={<JobPage />}/>
+        <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob}/>}/>
         <Route path="*" element={<NotFoundPage />}/>
       </Route>
     )
