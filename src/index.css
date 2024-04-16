@@ -20,7 +20,7 @@ code {
   background-color: black;
 }
 
-.nav-item a:hover{
+.nav-item .nav-link:hover{
   color: white;
 }
 
